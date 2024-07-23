@@ -32,3 +32,8 @@ address: str = "direaccion" #lo declaro inicialmente con str
 address = 32
 print(address) #como lo he cambiado ahora la variable es un int
 
+#Concatenar cadenas de texto
+
+saludo_python = "Hola" + " " + "Python"
+print(saludo_python)
+
