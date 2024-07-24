@@ -32,4 +32,12 @@ print(3 != 4)
 print (3 > 4 == 2) #e pueden juntar pero por si mismos no sirve de mucho
 
 
-# Operadores Lógicos(...)
+# Operadores Lógicos(and, or, not ...) Se escriben tal cual aquí
+
+print(3 > 4 and "hola" > "python") # false and false -> false  
+print(3 > 4 or "hola" > "python") # false or false -> false
+print(not "hola" > "python") # not flase -> true
+
+print(3 < 4 or "hola" < "python"  and 3 == 4)
+
+
