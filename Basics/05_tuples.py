@@ -20,4 +20,8 @@ print(my_sum_tuple) # tengo ambas tuplas en una "sumadas"
 
 print(my_sum_tuple[1:4]) # veo los elementos de ese rango, el ultimo no lo tiene en cuenta
 
+my_tuple = list(my_tuple) #convierto una tupla en una lista
+print(type(my_tuple))
 
+# del my_tuple -> esto lo que hace es eliminar la variable, no su contenido
+# del my_tuple[2] -> esto tampoco es valido
