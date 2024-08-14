@@ -1,5 +1,5 @@
 
-# Aprender los principales, sus usos y estructura de los más comunes.
+
 # Cuando necesito pasar por el mismo codigo varias veces.
 
 # WHILE-- hay que pasarle una condicion
@@ -18,7 +18,7 @@ while my_condition < 20: # empiezo a mezclar conceptos
         print("igual a 15")
     elif my_condition == 18:
         print("igual a 18")
-        break # se detiene la ejecucion del bucle
+        break # se detiene la ejecucion del bucle. Si se usa continue ignora y sigue ejecutando
     print(my_condition)
 
 # FOR
@@ -37,7 +37,10 @@ my_dict = {
     "Lenguajes":{"Python","Java","C","Ruby"}, 
     1:1.85
     }
-for element in my_set:
+for element in my_set: 
     print(element) 
-for element in my_dict:
+for element in my_dict:#admite else pero no if ni elif
     print(element) 
+else:
+    print("El bucle del diccionario ha acabado")
+    
