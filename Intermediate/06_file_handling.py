@@ -46,6 +46,23 @@ print(json_dict) # ahora tenemos el json guardado en un diccionario y se ve perf
 
 # CSV FILE
 
+import csv # para trabajar con csv
+
+csv_file = open("Intermediate/my_file.csv", "w") # abro el fichero csv para escribir
+
+csv_writer = csv.writer(csv_file) # creo un writer para escribir en csv
+
+csv_writer.writerow(["name", "surname", "Age", "Languages", "website"]) # escribo las cabeceras del csv (las columnas)
+csv_writer.writerow(["Raul", "Rodriguez", 25, "Python","https://www.example.com"]) # escribo las filas del csv
+csv_writer.writerow(["Roswell", "", 2, "COBOL",""]) # escribo las filas del csv
+
+csv_file.close() # cierro el fichero
+
+with open("Intermediate/my_file.csv") as file: # veo en la terminal los datos del csv
+    for line in file.readlines():
+        print(line)
+   
+
 # XLSX FILE
 
 # XML FILE
