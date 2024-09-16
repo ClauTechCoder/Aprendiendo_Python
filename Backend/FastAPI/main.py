@@ -1,6 +1,8 @@
 
 # Tutorial de instalacion de FastApi  correctamente y ver que funcione bien
 
+# PETICION GET ES LA QUE EL EXPLORADOR LEE POR DEFECTO.
+
 from fastapi import FastAPI
 
 app = FastAPI()
@@ -14,7 +16,8 @@ async def root(): #async sirve para que la ejecucion del codigo sea asincrona
 
 @app.get("/url") # esta linea indica que la ruta /url va a responder con este metodo
 async def url(): #async sirve para que la ejecucion del codigo sea asincrona   
-    return {"message": "Estoy dentro de la url"} # mensaje de bienvenida al usuario en formato JSON
+    return {"url": "Estoy dentro de la url",
+            "google": "https://google.com"} # mensaje de bienvenida al usuario en formato JSON
 
 
 # uvicorn main:app --reload -> este comando permite que el server se ejecute en el puerto 8000 y que 
@@ -27,3 +30,10 @@ async def url(): #async sirve para que la ejecucion del codigo sea asincrona
 # INFO:     Waiting for application startup.
 # INFO:     Application startup complete.
 # INFO:     127.0.0.1:56192 - "GET / HTTP/1.1" 200 OK
+
+
+# http://127.0.0.1:8000/docs -> AQUI TENEMOS NUESTRA DOCUMENTACION HECHA, ES AUTOMATICO
+# http://127.0.0.1:8000/redoc -> TBN  ES DOCUMENTACION HECHA ESTE LINK EN OTRO ESTANDAR, SE PUEDE DESCARGAR SU JSON
+# USANDO POSTMAN TBN LE PUEDO PASAR ESA DIRECCION CON UN GET Y ME DEVUELVE LO MISMO
+# USANDO EXTENSION VSCODE THUNDER CLIENT LO TENGO SIN SALIR DEL PROGRAMA
+
