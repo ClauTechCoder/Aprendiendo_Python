@@ -4,8 +4,17 @@
 # PETICION GET ES LA QUE EL EXPLORADOR LEE POR DEFECTO.
 
 from fastapi import FastAPI
+from routers import products,users # importamos el fichero a usar
+from fastapi.staticfiles import StaticFiles # para poder usar recursos estaticos
 
 app = FastAPI()
+
+# AHORA LO QUE HACEMOS ES LLAMAR A OTRAS CLASES DENTRO DEL MISMO .PY PARA PODER HACER 
+# # uvicorn nombre_app:app --reload SOLO UNA
+app.include_router(products.router) # lo incluyo en mi main, y ya pueod usar todo lo suyo
+app.include_router(users.router) 
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
 
 # Creamos una funcion que devuelve un mensaje de bienvenida
 
@@ -36,4 +45,5 @@ async def url(): #async sirve para que la ejecucion del codigo sea asincrona
 # http://127.0.0.1:8000/redoc -> TBN  ES DOCUMENTACION HECHA ESTE LINK EN OTRO ESTANDAR, SE PUEDE DESCARGAR SU JSON
 # USANDO POSTMAN TBN LE PUEDO PASAR ESA DIRECCION CON UN GET Y ME DEVUELVE LO MISMO
 # USANDO EXTENSION VSCODE THUNDER CLIENT LO TENGO SIN SALIR DEL PROGRAMA
+
 
